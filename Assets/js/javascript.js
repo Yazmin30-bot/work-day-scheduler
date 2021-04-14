@@ -29,12 +29,12 @@ for (var i = 9; i < 18; i++) {
     //Set the hours with format AM/PM
     var hourText = $('<div>');
     hourText.text(moment(i, "H HH").format("hA"));
-    hourText.addClass('col-md-1 hour ');
+    hourText.addClass(' col-md-1 hour ');
     rowEl.append(hourText);
 
     //Set the text area whhere you type the task(s)
     var textAreaEl = $('<textarea>');
-    textAreaEl.addClass('col-md-10 description');
+    textAreaEl.addClass('col-md-10 col-11 description');
     var key = JSON.parse(localStorage.getItem('hour-' + i));
     //Fill the previous task saved when refresh the page
     if (key == null) {
@@ -48,7 +48,7 @@ for (var i = 9; i < 18; i++) {
     rowEl.append(textAreaEl);
     //Create a button with icon
     var buttonEl = $('<button>');
-    buttonEl.addClass('btn saveBtn col-md-1 far fa-save saveIcon');
+    buttonEl.addClass('btn saveBtn col-md-1 col-1 far fa-save saveIcon');
     buttonEl.attr('id', 'btn-' + i);
     rowEl.append(buttonEl);
 }
