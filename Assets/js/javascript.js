@@ -47,6 +47,24 @@ for (var i = 9; i < 18; i++) {
 }
 
 
+//Save the task(s) when you click the save button on localStorage
+for (var i = 9; i < 18; i++) {
+    $("#btn-" + i).click(function (event) {
+        event.preventDefault();
+        parentEl = $(this).parent().get(0).id
+        console.log(parentEl)
+        var index = $(this).attr('id');
+        console.log(index);
+        var textStore = $("#" + parentEl).children("textarea").val();
+        console.log(textStore);
+        var hourTask = {
+            hour: index,
+            task: textStore
+        }
+        localStorage.setItem(parentEl, JSON.stringify(hourTask));
+
+    });
+}
 
 
 
