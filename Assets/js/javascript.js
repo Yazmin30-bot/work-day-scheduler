@@ -16,6 +16,14 @@ for (var i = 9; i < 18; i++) {
     rowEl.attr('id', 'hour-' + i);
     rowEl.addClass('row time-block');
     //Make the background color based on current time 
+    if (i < currentHour) {
+        rowEl.addClass('past')
+    } else if (i > currentHour) {
+        rowEl.addClass('future')
+    } else {
+        rowEl.addClass('present')
+    }
+
 
     mainContainer.append(rowEl);
     //Set the hours with format AM/PM
