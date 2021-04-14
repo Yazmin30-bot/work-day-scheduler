@@ -35,8 +35,15 @@ for (var i = 9; i < 18; i++) {
     //Set the text area whhere you type the task(s)
     var textAreaEl = $('<textarea>');
     textAreaEl.addClass('col-md-10 description');
-    //Fill the previous task saved
-  
+    var key = JSON.parse(localStorage.getItem('hour-' + i));
+    //Fill the previous task saved when refresh the page
+    if (key == null) {
+        textAreaEl.val("");
+    } else {
+        textAreaEl.val(key.task);
+    }
+    rowEl.append(textAreaEl);
+
 
     rowEl.append(textAreaEl);
     //Create a button with icon
